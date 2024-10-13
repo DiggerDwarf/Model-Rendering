@@ -243,15 +243,6 @@ bool Update(sf::RenderWindow& window, Camera& camera, sf::Clock& clock, bool& is
             else if (event.key.code == sf::Keyboard::O && event.key.control)
             {
                 ask_load_model(scene);
-                Model* model = scene->modelList[0].second;
-                for (int i = 0; i < 20; i++)
-                {
-                    std::cout << "Vertex " << model->vertices[i] << "\n";
-                    std::cout << "Normal " << model->normals[i] << "\n";
-                    // std::cout << "Texture " << model->textureCoords[i] << "\n";
-                    std::cout << model->faces[i] << "\n";
-                }
-                
             }
             else if (event.key.code == sf::Keyboard::Backspace)
             {
