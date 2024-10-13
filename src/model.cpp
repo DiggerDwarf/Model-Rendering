@@ -141,11 +141,6 @@ public:
         this->isOpen = false;
         fclose(this->file);
     }
-
-    void scan(const char* format, va_list __local_argv)
-    {
-        vfscanf(this->file, format, __local_argv);
-    }
 };
 
 float read_float(const char* (& data));
@@ -367,7 +362,7 @@ Model get_model_info_file(const char* fileName, CONDITION interpretNormals)
     while (true)
     {
         if (data() == '\0') [[unlikely]] break;
-        else if (data() == '#' || data() == 'o' || data() == 's' || data() == 'g' || data() == 'u') [[unlikely]]
+        else if (data() == '#' || data() == 'o' || data() == 's' || data() == 'g' || data() == 'u' || data() == 'm') [[unlikely]]
         {
             while (not(data() == '\n' || data() == '\r' || data() == '\0'))
             {

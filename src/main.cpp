@@ -406,17 +406,8 @@ int main(int argc, char const *argv[])
 
     Scene scene;
 
-    // Extract model info
-    // Model cow = get_model_info(binDataStart, binDataSize);
-    // scene.add_model(cow, "cow");
-    // scene.spawn_object("cow", "cow");
-
-    // Model teapot = get_model_info_file("C:\\Users\\Nathan\\Documents\\GitHub Repositories\\stuff\\obj_render\\obj\\cow.obj", DO_WHATEVER);
-    // scene.add_model(teapot, "teapot");
-    // scene.spawn_object("teapot", "teapot");
-    
     // Setup the window
-    sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Model rendering", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
+    sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Model rendering", sf::Style::Default);
     window.setVerticalSyncEnabled(true);
     window.setView(sf::View(sf::FloatRect(-1, 1, 2, -2)));
 
