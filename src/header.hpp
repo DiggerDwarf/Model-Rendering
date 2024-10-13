@@ -13,6 +13,9 @@ typedef unsigned int uint;
 typedef std::array<float, 3> coord;
 typedef std::array<std::array<uint, 3>, 3> face;
 
+std::ostream& operator<<(std::ostream& __os, coord& __coord);
+std::ostream& operator<<(std::ostream& __os, face&  __face);
+
 #define SFML_STATIC
 #include <SFML/Graphics.hpp>    // Graphics
 

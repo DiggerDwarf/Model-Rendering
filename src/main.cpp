@@ -2,8 +2,6 @@
 
 #include "header.hpp"
 
-#include <iostream>
-
 #include <thread>
 #include <windows.h>
 #include <commdlg.h>
@@ -18,6 +16,20 @@
 
 // Mouse drag sensitivity
 #define SENSITIVITY 0.002
+
+std::ostream& operator<<(std::ostream& __os, coord& __coord)
+{
+    __os << "< " << __coord[0] << ", " << __coord[1] << ", " << __coord[2] << " >";
+    return __os;
+}
+
+std::ostream& operator<<(std::ostream& __os, face& __face)
+{
+    __os << "Vertex indices  : < " << __face[0][0] << ", " << __face[0][1] << ", " << __face[0][2] << " >";
+    __os << "Normal indices  : < " << __face[1][0] << ", " << __face[1][1] << ", " << __face[1][2] << " >";
+    __os << "Texture indices : < " << __face[2][0] << ", " << __face[2][1] << ", " << __face[2][2] << " >";
+    return __os;
+}
 
 sf::Color get_diffuse(coord vertex, coord normal, coord lightSource)
 {
@@ -231,6 +243,15 @@ bool Update(sf::RenderWindow& window, Camera& camera, sf::Clock& clock, bool& is
             else if (event.key.code == sf::Keyboard::O && event.key.control)
             {
                 ask_load_model(scene);
+                Model* model = scene->modelList[0].second;
+                for (int i = 0; i < 20; i++)
+                {
+                    std::cout << "Vertex " << model->vertices[i] << "\n";
+                    std::cout << "Normal " << model->normals[i] << "\n";
+                    // std::cout << "Texture " << model->textureCoords[i] << "\n";
+                    std::cout << model->faces[i] << "\n";
+                }
+                
             }
             else if (event.key.code == sf::Keyboard::Backspace)
             {

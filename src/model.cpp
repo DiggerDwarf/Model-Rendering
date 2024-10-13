@@ -450,13 +450,16 @@ Model get_model_info_file(const char* fileName, CONDITION interpretNormals)
                     {
                         if (data() < '0' or data() > '9')
                         {
-                            tempFace[j][i] = 0;
                             if (data() == '/') 
                             {
                                 data++;
                                 // j++;
                             }
-                            continue;
+                            else
+                            {
+                                tempFace[j][i] = 0;
+                                continue;
+                            }
                         }
                         
                         tempFace[j][i] = read_uint(data)-1;

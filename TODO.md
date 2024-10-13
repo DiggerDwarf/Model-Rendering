@@ -5,6 +5,6 @@ If a feature isn't there, either (1) it's implemented or (2) i haven't tought ab
 | Status  | Category               | Description                                    | Priority                 |
 | :-----: | :--------------------- | :---------------------------------------       | :----------------------- |
 | &cross; | Feature                | Make a `.mtl` parser                           | In a few millennia or so |
-| &cross; | Fix                    | Incorrectly reading face indices (v/t/n)       | TOP                      |
 | &cross; | Change                 | Put rendering on the GPU                       | MID                      |
 | &cross; | Feature                | Handle primitive intersection with a depth map | After GPU implementation |
+| &check; | Fix                    | Incorrectly reading face indices (v/t/n)       | DONE                     |
